@@ -26,6 +26,12 @@ body{
     color: var(--text-color);
 }
 
+html, body{
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 .header{
     position: fixed;
     width: 100%;
@@ -976,6 +982,7 @@ input:-webkit-autofill:focus {
 
     .explore-container {
         grid-template-columns: 1fr;
+        padding: 0px 5px;
     }
 
     .game1-container, .game2-container, .contact-container {
