@@ -986,7 +986,9 @@ input:-webkit-autofill:focus {
     }
 
     .game1-container, .game2-container, .contact-container {
-        width: 100%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
         height: auto;
     }
 
