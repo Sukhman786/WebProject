@@ -368,3 +368,18 @@ document.querySelector('.form-contact').addEventListener('submit', function(even
     // Reset the input fields
     this.reset();
 });
+
+// Mobile Navbar Toggle
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x'); // Changes icon to an 'X'
+    navbar.classList.toggle('active'); // Shows/hides the menu
+};
+
+// Close menu when clicking a link
+window.onscroll = () => {
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
