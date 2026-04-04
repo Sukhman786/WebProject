@@ -1061,4 +1061,16 @@ input:-webkit-autofill:focus {
         flex-direction: row;
         gap: 65px;
     }
+
+    .footer .list{
+        font-size: 1.5rem;
+    }
+
+    .footer .list li{
+        margin-left: 15px;
+    }
+
+    .footer .copyright{
+        font-size: 12px;
+    }
 }
