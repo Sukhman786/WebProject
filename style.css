@@ -925,8 +925,8 @@ input:-webkit-autofill:focus {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .explore-container a{
-        grid-column: 1/-1;
+    .explore-container a:nth-child(3){
+        grid-column: 1 / span 2;
         display: flex;
         justify-content: center;
     }
@@ -1008,7 +1008,7 @@ input:-webkit-autofill:focus {
     }
 
     .game1-container, .game2-container, .contact-container {
-        width: 90%;
+        width: 90% !important;
         margin-left: auto;
         margin-right: auto;
         height: auto;
