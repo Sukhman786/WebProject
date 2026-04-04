@@ -1049,7 +1049,7 @@ input:-webkit-autofill:focus {
     }
 
     .game1-container .player-choices.active div:nth-child(3){
-        left: 20px;
+        right: 50px;
     }
 
     .game2-container{
