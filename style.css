@@ -896,6 +896,7 @@ input:-webkit-autofill:focus {
     text-align: center;
     margin-top: 40px;
     font-size: 16px;
+    margin-right: 50px;
 }
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
