@@ -229,9 +229,9 @@ btnAgain.addEventListener("click", () => {
     mSG.textContent = "Start Guessing.......";
     inputNum.value = "";
 
-    const lossSound = document.getElementById("mario");
-    lossSound.pause();        // Stop the music
-    lossSound.currentTime = 0; // Reset to the start
+    // const lossSound = document.getElementById("mario");
+    // lossSound.pause();        // Stop the music
+    // lossSound.currentTime = 0; // Reset to the start
 })
 
 
@@ -300,6 +300,11 @@ function checkMatch(){
 
         scoreUpdator+=5;
         cardScore.textContent = scoreUpdator;
+
+        const winSoundji = document.getElementById("win");
+        
+        winSoundji.currentTime = 0;
+        winSoundji.play();
     }
     
     else{
