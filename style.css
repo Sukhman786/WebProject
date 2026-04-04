@@ -1044,13 +1044,13 @@ input:-webkit-autofill:focus {
         margin-bottom: 50px;
     }
 
-    .game1-container .player-choices div:nth-child(3){
+    /* .game1-container .player-choices div:nth-child(3){
         right: 100px;
     }
 
     .game1-container .player-choices.active div:nth-child(3){
         right: 50px;
-    }
+    } */
 
     .game2-container{
         height: 430px !important;
