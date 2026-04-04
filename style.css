@@ -1030,10 +1030,6 @@ input:-webkit-autofill:focus {
         height: 150px;
     }
 
-    .game1-container .player-choices .computer-choice img{
-        margin-right: 60px;
-    }
-
     .game1-container .player-choices div img{
         height: 100px;
         width: 110px;
@@ -1046,6 +1042,10 @@ input:-webkit-autofill:focus {
 
     .game1-container .heading2{
         margin-bottom: 50px;
+    }
+
+    .game1-container .player-choices.active div:nth-child(3){
+        left: 50px;
     }
 
     .game2-container{
