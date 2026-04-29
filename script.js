@@ -1,4 +1,4 @@
-//Getting html elements
+// GAME 1----------------------------------------------------------------
 let container = document.querySelector(".game1-container");
 let optionBox = container.querySelector(".option-box");
 let playerChoicesBox = container.querySelector(".player-choices");
@@ -15,10 +15,8 @@ let drawTxtValue = document.querySelector(".score-box .draw h3 span");
 
 let won = 0,lost = 0,draw = 0;
 
-//choices of computer
 let computerChoices = ["Rock","Paper","Scissors"];
 
-//possible outcomes
 let outcomes = {
     RockRock: "Draw",
     RockPaper: "Computer",
@@ -41,19 +39,16 @@ for(let i=0; i<options.length; i++){
         optionBox.style.display = "none";
         playerChoicesBox.style.display = "block";
 
-        //delay before player choices
         setTimeout(() => {
             playerChoicesBox.classList.add("active");
         },1000)
 
         setTimeout(() => {
-            //pause the animation for 3 sec after revealing hands
             let playerChoices = playerChoicesBox.querySelectorAll("div");
             for(let i=0; i<playerChoices.length; i++){
                 playerChoices[i].style.animationPlayState = "paused";
             }
 
-            //set the player choice to selected option
             player.src = e.target.src;
 
             let randomChoice = computerChoices[Math.floor(Math.random()*computerChoices.length)]
@@ -62,24 +57,21 @@ for(let i=0; i<options.length; i++){
             let userChoice = e.target.parentElement.className;
             let outcomeValue = outcomes[userChoice + randomChoice]
 
-            //show the result
             showResult(outcomeValue);
 
         },3000)
     })
 }
 
-//Function to show the result of the game
+// RESULT SHOWING (GAME 1)------------------------------------------------------------
 let showResult = (result) =>{
 
     const lossSound = document.getElementById("mario");
     const winSound = document.getElementById("win");
     const drawSound = document.getElementById("shit");
-    //show the result and set container height
     container.style.height = "475px";
     resultBox.style.display = "block";
 
-    //update the result and score
     if(result === "You"){
         resultTxt.innerHTML = "Congrats, You Won! &#x1F389;";
 
@@ -93,14 +85,12 @@ let showResult = (result) =>{
     else if(result === "Computer"){
         resultTxt.innerHTML = "Ahh, You Lost! Baby";
 
-        // Reset and Play
         lossSound.currentTime = 0; 
         lossSound.play();
 
         lost++;
         lostTxtValue.innerHTML = lost;
 
-        console.log(lossSound);
     }
 
     else{
@@ -114,16 +104,14 @@ let showResult = (result) =>{
     }
 }
 
-//to play again the game
+// PLAY AGAIN BUTTTON (GAME 1)
 playAgainBtn.addEventListener("click",() => {
-    //resume the game
     playerChoicesBox.classList.remove("active");
     container.style.height = "400px";
     resultBox.style.display = "none";
     optionBox.style.display = "block";
     playerChoicesBox.style.display = "none";
 
-    //resume the animation of revealing hands
     let playerChoices = playerChoicesBox.querySelectorAll("div");
     for(let i=0; i<playerChoices.length; i++){
         playerChoices[i].style.animationPlayState = "running";
@@ -131,7 +119,7 @@ playAgainBtn.addEventListener("click",() => {
 })
 
 
-//GAME 2 SECTION
+// GAME 2 SECTION---------------------------------------------------------------------
 const game2 = document.querySelector(".game2");
 const game2Container = document.querySelector(".game2-container");
 const btnCheck = document.querySelector(".btn-check");
@@ -144,7 +132,6 @@ const score = document.querySelector(".score");
 const numContent = document.querySelector(".num-content");
 const paraJi = document.querySelector(".paraji");
 
-//generate num 1 to 100
 let secretNum = Math.trunc(Math.random()*100+1);
 
 console.log(secretNum);
@@ -153,6 +140,9 @@ let scoreji = 20;
 let highScoreji = 0;
 
 btnCheck.addEventListener("click", () => {
+
+    event.preventDefault();
+    
     const guess = Number(inputNum.value);
 
     if(!guess){
@@ -179,7 +169,6 @@ btnCheck.addEventListener("click", () => {
         numContent.style.color = "white";
         inputNum.style.color = "black";
         paraJi.style.color = "#fff000";
-        // paraJi.style.webkitTextStroke = "1px ";
         score.style.color = "#fff000";
         highScore.style.color = "#fff000";
 
@@ -204,7 +193,7 @@ btnCheck.addEventListener("click", () => {
     }
 });
 
-//play again btn
+// PLAY AGAIN BUTTON (GAME 2)
 btnAgain.addEventListener("click", () => {
     scoreji = 20;
     secretNum = Math.trunc(Math.random()*100+1);
@@ -228,15 +217,11 @@ btnAgain.addEventListener("click", () => {
     highScore.style.color = "white";
     mSG.textContent = "Start Guessing.......";
     inputNum.value = "";
-
-    // const lossSound = document.getElementById("mario");
-    // lossSound.pause();        // Stop the music
-    // lossSound.currentTime = 0; // Reset to the start
 })
 
 
 
-//GAME 3 SECTION
+// GAME 3 SECTION--------------------------------------------------------------------
 
 let cardsArray = ["clubs_A","clubs_J","clubs_K","clubs_Q","clubs_A","clubs_J","clubs_K","clubs_Q","hearts_A","hearts_J","hearts_K","hearts_Q","hearts_A","hearts_J","hearts_K","hearts_Q"];
 let scoreUpdator = 20;
@@ -251,7 +236,6 @@ function shuffle(array){
 
 shuffle(cardsArray);
 
-//assign all cards to different divs
 let allCards = document.querySelectorAll(".cardji");
 
 allCards.forEach((card, index) => {
@@ -270,7 +254,6 @@ function clickingFun(card){
 
     let cardName = card.getAttribute("data-name");
 
-    // show image
     card.classList.remove('back');
     card.classList.add('face');
     card.style.backgroundImage = `url(./playing-cards-master/${cardName}.png)`;
@@ -293,7 +276,6 @@ function checkMatch(){
     let secondName = secondCard.getAttribute("data-name");
 
     if(firstName === secondName){
-        // match
         firstCard = null;
         secondCard = null;
         lockBoard = false;
@@ -308,7 +290,6 @@ function checkMatch(){
     }
     
     else{
-        // not match → flip back
         setTimeout(() => {
             firstCard.classList.add('back');
             secondCard.classList.add('back');
@@ -329,7 +310,7 @@ function checkMatch(){
     }
 }
 
-// CONTACT SECTION
+// RESET GAME 3--------------------------------------------------------------------------
 function resetGame3(){
     let cardScore = document.querySelector(".card-score");
     scoreUpdator = 20;
@@ -339,10 +320,8 @@ function resetGame3(){
     secondCard = null;
     lockBoard = false;
    
-    //shuffle cards functin
     shuffle(cardsArray);
 
-    //assign all cards to different divs
     let allCards = document.querySelectorAll(".cardji");
 
     allCards.forEach((card, index) => {
@@ -354,23 +333,19 @@ function resetGame3(){
     });
 }
 
-// CONTACT SECTION   -----   SUBMIT BUTTON
+// CONTACT SECTION (SUBMIT BUTTON)----------------------------------------------------------
 document.querySelector('.form-contact').addEventListener('submit', function(event) {
-    // Prevent the form from refreshing the page
     event.preventDefault();
 
     const nameji = document.querySelectorAll('.input-form')[0].value.trim();
     const btn = document.querySelector('.input-btn');
     const responseText = document.querySelector('#response-text');
 
-    // Hide the button entirely
     btn.style.display = "none";
 
-    // Show the success message in its place
     responseText.innerHTML = `Thank you, <span class="hidMsgSpan">${nameji}</span>! We will <span class="hidMsgSpan">contact you</span> soon.`;
     responseText.style.display = "block";
 
-    // Reset the input fields
     this.reset();
 });
 
