@@ -193,7 +193,7 @@ section{
     color: black;
 }
 
-/* SCROLL BAR */
+/* SCROLL BAR =====================================================================*/
 
 ::-webkit-scrollbar{
     width: 20px;
@@ -207,7 +207,7 @@ section{
     background-color: var(--bg-color);
 }
 
-/* ABOUT SECTION */
+/* ABOUT SECTION ================================================================= */
 
 .about{
     background-color: black;
@@ -224,7 +224,7 @@ section{
     justify-content: space-between;
     gap: 50px;
     padding: 25px;
-    background: #000; /* Dark background to match your image */
+    background: #000;
     color: #fff;
 }
 
@@ -260,7 +260,7 @@ section{
     box-shadow: 0 0 15px var(--main-color);
 }
 
-/*EXPLORE SECTION*/
+/* EXPLORE SECTION =====================================================================*/
 
 .heading{
     text-align: center;
@@ -335,7 +335,7 @@ section{
     line-height: 1.5;
 }
 
-/* GAME 1 SECTION */
+/* GAME 1 SECTION =========================================================================*/
 
 .game1{
     background-color: black;
@@ -555,7 +555,7 @@ section{
 
 }
 
-/* GAME 1 SECTION */
+/* GAME 2 SECTION ==============================================================================*/
 
 .game2{
     background-color: black;
@@ -650,8 +650,6 @@ section{
     font-size: 1.3rem;
     font-weight: 700;
     margin: 1rem 0;
-    /* color: white; */
-    /* margin-top: 1.5rem; */
 }
 
 .game2-container .num-data{
@@ -690,7 +688,7 @@ section{
     margin-left: 7px;
 }
 
-/*GAME 3 SECTION*/
+/* GAME 3 SECTION ============================================================================*/
 
 .game3 h2{
     text-align: center;
@@ -706,15 +704,7 @@ section{
     grid-template-rows: repeat(2,150px);
     justify-content: center;
     gap: 50px;
-    /* flex-wrap: wrap; */
 }
-
-/* .game3 .game3-container img{
-    width: 100px;
-    height: 150px;
-    background-image: none;
-    filter: hue-rotate();
-} */
 
 .game3 .game3-container .cardji{
     min-width: 100px;
@@ -771,7 +761,7 @@ section{
     color: var(--text-color);
 }
 
-/* Contact Section */
+/* Contact Section ========================================================================*/
 
 .contactji{
     background-color: black;
@@ -862,7 +852,7 @@ input:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-/* FOOTER SECTION */
+/* FOOTER SECTION ==================================================================================*/
 .footer{
     background-color: var(--bg-color);
     padding: 25px 0;
@@ -899,7 +889,7 @@ input:-webkit-autofill:focus {
     margin-right: 50px;
 }
 
-/* --- RESPONSIVE MEDIA QUERIES --- */
+/* -------------------------- RESPONSIVE MEDIA QUERIES ---------------------------------- */
 
 /* For Tablets and smaller desktops */
 @media (max-width: 991px) {
@@ -943,10 +933,10 @@ input:-webkit-autofill:focus {
     }
 }
 
-/* For Mobile Devices */
+/*======================= For Mobile Devices =======================*/
 @media (max-width: 768px) {
     #menu-icon {
-        display: block; /* Show hamburger icon */
+        display: block;
         cursor: pointer;
     }
 
@@ -958,11 +948,11 @@ input:-webkit-autofill:focus {
         padding: 1rem 4%;
         background: var(--bg-color);
         border-top: .1rem solid rgba(0,0,0,.2);
-        display: none; /* Hide by default */
+        display: none;
     }
 
     .navbar.active {
-        display: block; /* Show when icon clicked */
+        display: block;
     }
 
     .navbar a {
@@ -972,7 +962,7 @@ input:-webkit-autofill:focus {
     }
 
     .home {
-        flex-direction: column-reverse; /* Image on top for mobile */
+        flex-direction: column-reverse;
         text-align: center;
     }
 
@@ -1004,8 +994,6 @@ input:-webkit-autofill:focus {
     }
 
     .explore-container {
-        /* grid-template-columns: 1fr;
-        padding: 0px 5px; */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1044,17 +1032,8 @@ input:-webkit-autofill:focus {
         margin-bottom: 50px;
     }
 
-    /* .game1-container .player-choices div:nth-child(3){
-        right: 100px;
-    }
-
-    .game1-container .player-choices.active div:nth-child(3){
-        right: 50px;
-    } */
-
     .game2-container{
         height: 430px !important;
-        /* padding-bottom: 1rem !important; */
         padding-top: 2rem !important ;
     }
 
@@ -1079,7 +1058,6 @@ input:-webkit-autofill:focus {
     .game3 {
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
         width: 100%;
         padding: 5rem 2%;
